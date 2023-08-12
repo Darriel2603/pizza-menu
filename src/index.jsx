@@ -72,8 +72,14 @@ function Menu() {
       <Pizza
         name="Pizza Focaccia"
         ingredients="Bread with italian olive oil and rosemary"
-        price="12"
+        price={12}
         photoName="pizzas/focaccia.jpg"
+      />
+      <Pizza
+        name="Pizza Margherita"
+        ingredients="Tomato and mozarella"
+        price={10}
+        photoName="pizzas/margherita.jpg"
       />
     </main>
   );
@@ -89,6 +95,7 @@ function Footer() {
   return (
     <div className="footer">
       <footer>
+        <p></p>
         {isOpen
           ? "We're open until 22:00 PM. Come visit us or order online"
           : "We're closed, Come back tomorrow at 8:00 AM"}
@@ -104,6 +111,7 @@ function Pizza(props) {
       <div>
         <h3>{props.name}</h3>
         <p>{props.ingredients}</p>
+        <span>{props.price + 3}</span>
       </div>
     </div>
   );
