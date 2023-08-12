@@ -101,10 +101,17 @@ function Menu() {
 
 function Footer() {
   const getHour = new Date().getHours();
-  const openHour = 8;
+  const openHour = 12;
   const closeHour = 22;
 
   const isOpen = openHour <= getHour && getHour <= closeHour;
+
+  // if (!isOpen)
+  //   return (
+  //     <p>
+  //       We're happy to welcome you between {openHour}:00 and {closeHour}:00.
+  //     </p>
+  //   );
 
   return (
     <footer className="footer">
@@ -132,6 +139,8 @@ function Order({ closeHour, openHour }) {
 }
 
 function Pizza(props) {
+  if (props.pizzaObj.soldOut) return null;
+
   return (
     <li className="pizza">
       <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
